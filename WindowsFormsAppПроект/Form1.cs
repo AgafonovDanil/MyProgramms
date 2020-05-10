@@ -34,6 +34,7 @@ namespace WindowsFormsAppПроект
             this.Invalidate();
             this.Paint += Form1_Paint;
 
+
             Graphics G = e.Graphics;
             G.SmoothingMode = SmoothingMode.HighQuality;
             G.Clear(Color.White);

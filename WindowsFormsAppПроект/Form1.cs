@@ -11,28 +11,28 @@ using System.Drawing.Drawing2D;
 
 namespace WindowsFormsAppПроект
 {
-    public partial class Form1 : Form
+    public partial class ProjectClock : Form
     {
-        public Form1()
+        public ProjectClock()
         {
             InitializeComponent();
         }
        
 
-        private void Form1_Load(object sender, EventArgs e)
+        private void ProjectClock_Load(object sender, EventArgs e)
         {
             this.Invalidate();
-            this.Paint += Form1_Paint;
+            this.Paint += ProjectClock_Paint;
 
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             SetStyle(ControlStyles.DoubleBuffer, true);
             SetStyle(ControlStyles.UserPaint, true);
         }
 
-        private void Form1_Paint(object sender, PaintEventArgs e)
+        private void ProjectClock_Paint(object sender, PaintEventArgs e)
         {
             this.Invalidate();
-            this.Paint += Form1_Paint;
+            this.Paint += ProjectClock_Paint;
 
 
             Graphics G = e.Graphics;
@@ -100,9 +100,9 @@ namespace WindowsFormsAppПроект
         private Point RadiaPoint(Point ptCenter, int R, int seconds)
         {
 
-            double угол = -((seconds - 15) % 60) * Math.PI / 30;
-            return new Point(ptCenter.X + (int)(R * Math.Cos(угол)),
-                ptCenter.Y - (int)(R * Math.Sin(угол)));
+            double tickAngle = -((seconds - 15) % 60) * Math.PI / 30;
+            return new Point(ptCenter.X + (int)(R * Math.Cos(tickAngle)),
+                ptCenter.Y - (int)(R * Math.Sin(tickAngle)));
         }
 
      
